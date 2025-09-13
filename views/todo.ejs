@@ -46,16 +46,17 @@
               class="h-8 w-8 rounded-full border border-[#af6856] cursor-pointer <%= todo.iscompleted? 'bg-green-400' : 'bg-transparent' %>"
               href="/done/<%= todo._id %>"></a>
 
-            <h4 class="text-xl justify-self-start font-semibold">
+            <h4
+              class="text-xl justify-self-start font-semibold <%= todo.iscompleted? 'line-through' : '' %>">
               <%= todo.content %>
             </h4>
 
             <div class="buttons flex justify-center items-center gap-4">
               <button class="edit-btn">
-                <img class="w-8" src="/images/edit.png" alt="edit" />
+                <img class="w-8 cursor-pointer" src="/images/edit.png" alt="edit" />
               </button>
               <a href="/deletetask/<%= todo._id %>">
-                <img class="w-8" src="/images/delete.png" alt="delete"
+                <img class="w-8 cursor-pointer" src="/images/delete.png" alt="delete"
               /></a>
             </div>
           </div>
@@ -70,7 +71,7 @@
               required
               type="text" />
             <input
-              class="save flex items-center justify-center red-bg rounded-md text-black font-semibold py-2 px-4"
+              class="save cursor-pointer flex items-center justify-center red-bg rounded-md text-black font-semibold py-2 px-4"
               type="submit"
               value="Save" />
           </form>
