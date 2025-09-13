@@ -1,0 +1,36 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  width: 100%;
+  height: 100%;
+  background-color: #0d0d0d;
+  color: #cfc5a6;
+}
+
+.red {
+  color: #ff5730;
+}
+.red-bg {
+  background-color: #ff5730;
+}
+
+.green-bg {
+  color: #59cb4d;
+}
+.grey {
+  color: #7d7973;
+}
+.dark-grey {
+  background-color: #1e1e1e;
+}
+.white {
+  color: #cfc5a6;
+}
+.black {
+  color: #0d0d0d;
+}
