@@ -122,10 +122,11 @@ app.post("/edittask/:todoid", isloggedin, async (req, res) => {
   res.redirect(`/todo/${req.user._id}`);
 });
 app.get("/done/:todoid", isloggedin, async (req, res) => {
-  await todoModel.findOneAndUpdate(
-    { _id: req.params.todoid },
-    { iscompleted: true }
-  );
+  const todo = await todoModel.findById(req.params.todoid);
+  if (todo) {
+    todo.iscompleted = !todo.iscompleted; // toggle true/false
+    await todo.save();
+  }
   res.redirect(`/todo/${req.user._id}`);
 });
 
